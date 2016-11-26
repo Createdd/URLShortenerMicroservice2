@@ -1,5 +1,5 @@
 # Author
-![@DDCreationStudios](https://avatars3.githubusercontent.com/u/22077628?v=3&s=460)
+![@DDCreationStudios](https://avatars.githubusercontent.com/u/22077628?v=3)
 
 Created by Daniel Detusch
 
