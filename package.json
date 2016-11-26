@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,17 @@
   "bugs": {
     "url": "https://github.com/DDCreationStudios/URLShortenerMicroservice2/issues"
   },
-  "homepage": "https://github.com/DDCreationStudios/URLShortenerMicroservice2#readme"
+  "homepage": "https://github.com/DDCreationStudios/URLShortenerMicroservice2#readme",
+  "dependencies": {
+    "express": "^4.14.0",
+    "mongodb": "^2.2.11",
+    "shortid": "^2.2.6",
+    "valid-url": "^1.0.9",
+    "body-parser": "~1.15.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "morgan": "~1.7.0",
+    "pug": "~2.0.0-beta6",
+    "serve-favicon": "~2.3.0"
+  }
 }
