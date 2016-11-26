@@ -1,5 +1,9 @@
 # Author
-![@DDCreationStudios](https://scontent-vie1-1.xx.fbcdn.net/v/t1.0-1/p320x320/10606478_766569733391212_3806866194883238537_n.jpg?oh=d406800e2d0fe66b7711ae4f8797a913&oe=58CDB60C) Created by Daniel Detusch [Github](https://github.com/DDCreationStudios) | [FreeCodeCamp](https://www.freecodecamp.com/ddcreationstudios) | [CodePen](http://codepen.io/ddcreationstudios/) | [LinkedIn](https://www.linkedin.com/in/daniel-deutsch-b95611127) | [Site](http://ddcreationstudios.at//) | [E-Mail](mailto:office@ddcreationstudios.at)
+![@DDCreationStudios](https://avatars3.githubusercontent.com/u/22077628?v=3&s=460)
+
+Created by Daniel Detusch
+
+[Github](https://github.com/DDCreationStudios) | [FreeCodeCamp](https://www.freecodecamp.com/ddcreationstudios) | [CodePen](http://codepen.io/ddcreationstudios/) | [LinkedIn](https://www.linkedin.com/in/daniel-deutsch-b95611127) | [Site](http://ddcreationstudios.at//) | [E-Mail](mailto:office@ddcreationstudios.at)
 
 # FreeCodeCamp API Projects: URL Shortener Microservice
 ## User stories:
