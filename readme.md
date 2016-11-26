@@ -1,5 +1,5 @@
 # Author
-![@DDCreationStudios](https://avatars3.githubusercontent.com/u/22077628?v=3&s=460)
+![@DDCreationStudios](https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAcwAAAAJDg1MDE4YWFjLTIwN2EtNDJhZC1hNGE2LTY4NjRmZGM2ZmQ2ZA.jpg)
 
 Created by Daniel Detusch
 
