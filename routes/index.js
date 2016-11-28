@@ -15,6 +15,16 @@ router.get('/new/:url(*)', function(req, res, next) {
       console.log("No connection to MongoDB", err);
     } else{
       console.log("Connected to MongoDB");
+      var collection=db.collection("links");//create a db collection
+      var params=req.params.url;//set the url as parameter
+      var newLink=(db,callback)=>{
+        var insertLink={url:params, short:"test"};//create a new object
+        collection.insert([insertLink]);//store the object in the database
+        res.send(params);//output the url
+      };//function to import a link to the database and returns a short link
+      newLink(db,()=>{
+        db.close();
+      });//accept a callback function and close the DB
     }
   });//connect to mongoDB
   //res.render('index', { title: 'Express' });
