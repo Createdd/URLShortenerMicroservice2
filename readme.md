@@ -38,3 +38,6 @@ https://ddcreationstudios-urlshortener.herokuapp.com/r1sP@fjfx
 ```
 https://www.google.at/
 ```
+
+##Watch it on Heroku:
+https://ddcreationstudios-urlshortener.herokuapp.com/
