@@ -6,6 +6,7 @@ var mongodb=require("mongodb");
 var mLab="mongodb://test:test@ds159387.mlab.com:59387/urlshortener";//store mlab url
 var MongoClient=mongodb.MongoClient;//to host mongoDB connect command
 var shortid=require("shortid");//for generating short urls
+shortid.characters("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$@");//new list of characters replacing - and _
 var validUrl=require("valid-url");//to verify the url
 
 
@@ -17,25 +18,31 @@ router.get('/new/:url(*)', (req, res, next)=>{
       console.log("Connected to MongoDB");
       var collection=db.collection("links");//create a db collection
       var params=req.params.url;//set the url as parameter
+      var local=req.get("host");
       var newLink=(db,callback)=>{
-        /*var insertLink={url:params, short:"test"};//create a new object
-        collection.insert([insertLink]);//store the object in the database
-        res.send(params);//output the url*/
-        if(validUrl.isUri(params)){
-          var shortCode=shortid.generate();
-          var newUrl={url:params,short:shortCode};
-          collection.insert([newUrl]);
-          res.json({original_url:params, short_url: "localhost:3000/"+shortCode});
-          console.log(validUrl.isUri(params));
-        }else{
-          res.json({error: "URL is not valid"});
-        }
-      };//function to import a link to the database and returns a short link
+        collection.findOne({"short":params}, {url: 1, _id: 0},(err,doc)=> {
+          if(doc!==null){
+            res.json({original_url: url, short_url: local+"/"+doc.short});//if the doc is found display json
+          } else {
+            if(validUrl.isUri(params)){
+              var shortCode=shortid.generate();
+              var newUrl={url:params,short:shortCode};
+              collection.insert([newUrl]);
+              res.json({original_url:params, short_url: local+"/"+shortCode});
+              console.log(validUrl.isUri(params));
+            }else{
+              res.json({error: "URL is not valid"});
+            }
+          }//else if no document is found create one
+        });//set the findOne query for the url
+      };//newLink function to import a link to the database and returns a short link
+
       newLink(db,()=>{
         db.close();
       });//accept a callback function and close the DB
-    }
-  });//connect to mongoDB
+    }//else connect to mongo
+
+  });//MongoClient.connect to mongoDB
 });//route to new url. the * allows proper formatting/ alternative would be regEx
 
 router.get('/:short', (req, res, next)=>{
