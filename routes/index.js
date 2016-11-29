@@ -3,7 +3,8 @@
 var express = require('express');
 var router = express.Router();
 var mongodb=require("mongodb");
-var mLab="mongodb://test:test@ds159387.mlab.com:59387/urlshortener";//store mlab url
+var config=require("../config.js");
+var mLab="mongodb://"+config.db.host+"/"+config.db.name;//store mlab url
 var MongoClient=mongodb.MongoClient;//to host mongoDB connect command
 var shortid=require("shortid");//for generating short urls
 shortid.characters("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$@");//new list of characters replacing - and _
