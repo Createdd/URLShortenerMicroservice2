@@ -8,6 +8,8 @@ Created by Daniel Deutsch
 </kbd>
 
 # FreeCodeCamp API Projects: URL Shortener Microservice
+##Watch it on Heroku:
+https://ddcreationstudios-urlshortener.herokuapp.com/
 ## User stories:
 1. I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.
 2. If I pass an invalid URL that doesn't follow the valid http://www.example.com format, the JSON response will contain an error instead.
@@ -39,8 +41,6 @@ https://ddcreationstudios-urlshortener.herokuapp.com/r1sP@fjfx
 https://www.google.at/
 ```
 
-##Watch it on Heroku:
-https://ddcreationstudios-urlshortener.herokuapp.com/
 
 #####Thx to Michael Lefkowitz for providing help
 https://github.com/leftynaut
