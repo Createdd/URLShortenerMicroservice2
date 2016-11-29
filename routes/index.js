@@ -68,5 +68,8 @@ router.get('/:short', (req, res, next)=>{
   });//connect to mongoDB
 });//route to new url. the * allows proper formatting/ alternative would be regEx
 
+router.get("/",(req,res,next)=>{
+  res.render('index', { title: 'Express' });
+});
 
 module.exports = router;

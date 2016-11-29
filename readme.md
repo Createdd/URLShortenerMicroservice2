@@ -16,24 +16,25 @@ Created by Daniel Deutsch
 ## Example creation usage:
 
 ```js
-https://little-url.herokuapp.com/new/https://www.google.com
-https://little-url.herokuapp.com/new/http://foo.com:80
+https://ddcreationstudios-urlshortener.herokuapp.com/new/https://www.google.at/
 ```
 
 ## Example creation output:
 
 ```js
-{"original_url":"http://example.com:80","short_url":"https://short-url.herokuapp.com/8170"}
+{"original_url": "https://www.google.at/","short_url": "ddcreationstudios-urlshortener.herokuapp.com/r1sP@fjfx"}
+
 ```
 
 ## Usage:
 
 ```
-https://short-url.herokuapp.com/2871
+https://ddcreationstudios-urlshortener.herokuapp.com/r1sP@fjfx
+
 ```
 
 ### Will redirect to:
 
 ```
-https://www.google.com/
+https://www.google.at/
 ```

@@ -1,5 +1,33 @@
-extends layout
+html
+  head
+    link(rel='stylesheet', href='/public/stylesheets/style.css')
+  body
+    h1 FreeCodeCamp API Projects: URL Shortener Microservice
+    h1 Written by Daniel Deutsch
+    h2 User stories:
+    ol
+      li I can pass a URL as a parameter and I will receive a shortened URL in the JSON response.
+      li If I pass an invalid URL that doesn't follow the valid http://www.example.com format, the JSON response will contain an error instead.
+      li When I visit that shortened URL, it will redirect me to my original link.
 
-block content
-  h1= title
-  p Welcome to #{title}
+    h2 Example creation usage:
+
+
+    p https://ddcreationstudios-urlshortener.herokuapp.com/new/https://www.google.at/
+
+
+    h2 Example creation output:
+
+
+    p {"original_url": "https://www.google.at/","short_url": "ddcreationstudios-urlshortener.herokuapp.com/r1sP@fjfx"}
+
+
+    h2 Usage:
+
+
+    p https://ddcreationstudios-urlshortener.herokuapp.com/r1sP@fjfx
+
+
+    h2 Will redirect to:
+
+    p https://www.google.at/
