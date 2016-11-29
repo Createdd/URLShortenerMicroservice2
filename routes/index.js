@@ -52,9 +52,9 @@ router.get('/:short', (req, res, next)=>{
     } else{
       console.log("Connected to MongoDB");
       var collection=db.collection("links");//create a db collection
-      var params=req.params.url;//set the url as parameter
+      var params=req.params.short;//set the short url as parameter!!!!!!!
       var findLink=(db,callback)=>{
-        collection.findOne({"short":params}, {url: 1, _id: 0},(err,doc)=> {
+        collection.findOne({"short":params},(err,doc)=> {
           if(doc!==null){
             res.redirect(doc.url);//when a documents is found, redirect to the doc page
           }else{
