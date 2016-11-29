@@ -41,3 +41,6 @@ https://www.google.at/
 
 ##Watch it on Heroku:
 https://ddcreationstudios-urlshortener.herokuapp.com/
+
+#####Thx to Michael Lefkowitz for providing help
+https://github.com/leftynaut
