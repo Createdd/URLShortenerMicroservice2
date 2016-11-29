@@ -9,8 +9,6 @@ var MongoClient=mongodb.MongoClient;//to host mongoDB connect command
 var shortid=require("shortid");//for generating short urls
 shortid.characters("0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ$@");//new list of characters replacing - and _
 var validUrl=require("valid-url");//to verify the url
-
-
 router.get('/new/:url(*)', (req, res, next)=>{
   MongoClient.connect(mLab,(err,db)=>{
     if(err){
