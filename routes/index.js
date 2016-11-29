@@ -36,6 +36,31 @@ router.get('/new/:url(*)', (req, res, next)=>{
       });//accept a callback function and close the DB
     }
   });//connect to mongoDB
-});//the * allows proper formatting/ alternative would be regEx
+});//route to new url. the * allows proper formatting/ alternative would be regEx
+
+router.get('/:short', (req, res, next)=>{
+  MongoClient.connect(mLab,(err,db)=>{
+    if(err){
+      console.log("No connection to MongoDB", err);
+    } else{
+      console.log("Connected to MongoDB");
+      var collection=db.collection("links");//create a db collection
+      var params=req.params.url;//set the url as parameter
+      var findLink=(db,callback)=>{
+        collection.findOne({"short":params}, {url: 1, _id: 0},(err,doc)=> {
+          if(doc!==null){
+            res.redirect(doc.url);//when a documents is found, redirect to the doc page
+          }else{
+            res.json({error:"No Shortlink in Database found"});//else display error
+          }
+        });//set the findOne query for the url
+      };//function to import a link to the database and returns a short link
+      findLink(db,()=>{
+        db.close();
+      });//accept a callback function and close the DB
+    }
+  });//connect to mongoDB
+});//route to new url. the * allows proper formatting/ alternative would be regEx
+
 
 module.exports = router;
